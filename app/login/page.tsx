@@ -13,28 +13,26 @@ const Page = () => {
   const login = trpc.login.loginAccount.useMutation();
 
   const onFinish = async (values: any) => {
-    try {
-      setIsLoading(true);
-      setErrorMessage("");
-
-      const res = await login.mutateAsync({
-        email: values.email,
-        password: values.password,
-      });
-
-      if (res) {
-        router.push("/dashboard");
-      } else {
-        setErrorMessage("Login failed. Please try again.");
-        setIsLoading(false);
-      }
-    } catch (error) {
-      console.error(error);
-      setErrorMessage(
-        "An error occurred during Login. Please try again later."
-      );
-      setIsLoading(false);
-    }
+    // try {
+    //   setIsLoading(true);
+    //   setErrorMessage("");
+    //   const res = await login.mutateAsync({
+    //     email: values.email,
+    //     password: values.password,
+    //   });
+    //   if (res) {
+    //     router.push("/dashboard");
+    //   } else {
+    //     setErrorMessage("Login failed. Please try again.");
+    //     setIsLoading(false);
+    //   }
+    // } catch (error) {
+    //   console.error(error);
+    //   setErrorMessage(
+    //     "An error occurred during Login. Please try again later."
+    //   );
+    //   setIsLoading(false);
+    // }
   };
 
   return (

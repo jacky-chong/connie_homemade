@@ -29,9 +29,13 @@ export const middleware = async (req: NextRequest) => {
   }
 
   // if user is not signed in and the current path is not /login redirect the user to /login
-  // if (!isProtectedRoute && req.nextUrl.pathname !== "/login" && req.nextUrl.pathname !== "/signup") {
-  //   //return NextResponse.redirect(new URL("/login", req.url));
-  // }
+  if (
+    !isProtectedRoute &&
+    req.nextUrl.pathname !== "/home" &&
+    !req.nextUrl.pathname.includes("/menu")
+  ) {
+    return NextResponse.redirect(new URL("/home", req.url));
+  }
 
   //Render Route
   return NextResponse.next();

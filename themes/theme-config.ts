@@ -2,18 +2,18 @@ import type { ThemeConfig } from "antd";
 
 const theme: ThemeConfig = {
   token: {
-    colorPrimary: "#FF6F61",
+    colorPrimary: "#FFFFFF",
     colorSuccess: "#28a745",
     colorError: "#dc3545",
     colorWarning: "#ffc107",
-    colorTextBase: "#333333",
-    colorTextSecondary: "#FF1493",
-    colorBgBase: "#FFF0F5",
+    colorTextBase: "#000000",
+    colorTextSecondary: "#000000",
+    colorBgBase: "#FFFFFF",
   },
   components: {
     Menu: {
-      colorText: "#004F83", // Menu text blue
-      colorLinkActive: "#004F83", // Active link blue
+      colorText: "#FFFFFF", // Menu text blue
+      colorLinkActive: "#FFFFFF", // Active link blue
     },
     Modal: { wireframe: true },
   },

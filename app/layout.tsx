@@ -9,8 +9,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Love Line",
-  description: "Love Line",
+  title: "Connie Homemade",
+  description: "Connie Homemade",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-[#FFF0F5]`}>
+      <body className={`${inter.className} bg-[#FFFFFF]`}>
         <StyledComponentsRegistry>
           <ConfigProvider theme={theme}>
             <Provider>{children}</Provider>
