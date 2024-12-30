@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .turbo node_modules",
-    "db:generate": "pnpm prisma generate ",
-    "db:push": "pnpm prisma db push --skip-generate"
+    "db:generate": "npm prisma generate ",
+    "db:push": "npm prisma db push --skip-generate"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.21.1",
