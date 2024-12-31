@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run db:generate && next build",
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .turbo node_modules",
-    "db:generate": "pnpm prisma generate ",
-    "db:push": "pnpm prisma db push --skip-generate"
+    "db:generate": "npx prisma generate ",
+    "db:push": "npx prisma db push --skip-generate"
   },
   "dependencies": {
     "@ant-design/cssinjs": "^1.21.1",

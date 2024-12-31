@@ -29,11 +29,7 @@ export const middleware = async (req: NextRequest) => {
   }
 
   // if user is not signed in and the current path is not /login redirect the user to /login
-  if (
-    !isProtectedRoute &&
-    req.nextUrl.pathname !== "/home" &&
-    !req.nextUrl.pathname.includes("/menu")
-  ) {
+  if (!isProtectedRoute && req.nextUrl.pathname !== "/home") {
     return NextResponse.redirect(new URL("/home", req.url));
   }
 
@@ -50,6 +46,6 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    "/((?!api/login|_next/static|images|favicon.ico).*)",
+    "/((?!api/login|api|_next/static|images|photos|favicon.ico).*)",
   ],
 };
