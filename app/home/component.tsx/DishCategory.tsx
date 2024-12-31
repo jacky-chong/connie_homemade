@@ -36,4 +36,5 @@ const DishCategory = forwardRef<HTMLDivElement, DishCategoryProps>(
   }
 );
 
+DishCategory.displayName = "DishCategory";
 export default DishCategory;
