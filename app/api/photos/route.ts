@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 
 export async function GET(request: Request) {
-  const photosDirectory = path.join(process.cwd(), "public", "Photos");
+  const photosDirectory = path.join(process.cwd(), "public", "photos");
 
   try {
     const files = await fs.promises.readdir(photosDirectory);
@@ -15,9 +15,9 @@ export async function GET(request: Request) {
 
     return NextResponse.json({ photos: imageFiles });
   } catch (err) {
-    console.error("Error reading Photos directory:", err);
+    console.error("Error reading photos directory:", err);
     return NextResponse.json(
-      { error: "Failed to read Photos directory" },
+      { error: "Failed to read photos directory" },
       { status: 500 }
     );
   }

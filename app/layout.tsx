@@ -11,6 +11,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Connie Homemade",
   description: "Connie Homemade",
+  icons: {
+    icon: "/favicon.ico", // Favicon
+  },
+  // Setting the author information
+  authors: [
+    {
+      name: "Jacky Chong", // Replace with the actual author's name
+      url: "https://connie-homemade.vercel.app/",
+    },
+  ],
 };
 
 export default function RootLayout({
