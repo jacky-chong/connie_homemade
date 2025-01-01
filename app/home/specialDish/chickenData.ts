@@ -200,7 +200,11 @@ export const chickenData: DishType[] = [
       {
         code: "C19",
         title: "姜鸭",
-        description: "(依据番鸭时价)",
+        details: [
+          {
+            quantity: "半只/1只 (依据番鸭时价)",
+          },
+        ],
       },
       {
         code: "C20",
