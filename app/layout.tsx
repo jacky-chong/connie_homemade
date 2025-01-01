@@ -5,6 +5,7 @@ import { ConfigProvider } from "antd";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,7 +34,10 @@ export default function RootLayout({
       <body className={`${inter.className} bg-[#FFFFFF]`}>
         <StyledComponentsRegistry>
           <ConfigProvider theme={theme}>
-            <Provider>{children}</Provider>
+            <Provider>
+              {children}
+              <Analytics />
+            </Provider>
           </ConfigProvider>
         </StyledComponentsRegistry>
       </body>
