@@ -3,7 +3,7 @@
 import React, { forwardRef } from "react";
 import { List } from "antd";
 import { DishType } from "../type/DishType";
-import DishItem from "@/app/component/DishItem";
+import DishListing from "@/app/home/component.tsx/DishListing";
 
 type DishCategoryProps = {
   dishCategory: DishType;
@@ -11,7 +11,7 @@ type DishCategoryProps = {
   showPhotos: (code: string) => void;
 };
 
-const DishCategory = forwardRef<HTMLDivElement, DishCategoryProps>(
+const DishCategoryDetails = forwardRef<HTMLDivElement, DishCategoryProps>(
   ({ dishCategory, allPhotos, showPhotos }, ref) => {
     return (
       <div ref={ref} className="mt-4 scroll-mt-44">
@@ -24,7 +24,7 @@ const DishCategory = forwardRef<HTMLDivElement, DishCategoryProps>(
           itemLayout="horizontal"
           dataSource={dishCategory.data}
           renderItem={(item) => (
-            <DishItem
+            <DishListing
               dish={item}
               allPhotos={allPhotos}
               showPhotos={showPhotos}
@@ -36,5 +36,5 @@ const DishCategory = forwardRef<HTMLDivElement, DishCategoryProps>(
   }
 );
 
-DishCategory.displayName = "DishCategory";
-export default DishCategory;
+DishCategoryDetails.displayName = "DishCategoryDetails";
+export default DishCategoryDetails;

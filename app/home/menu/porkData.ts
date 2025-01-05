@@ -203,6 +203,26 @@ export const porkData: DishType[] = [
           },
         ],
       },
+      {
+        code: "B20",
+        title: "梅菜扣肉",
+        details: [
+          {
+            quantity: "~500g",
+            price: 48,
+          },
+        ],
+      },
+      {
+        code: "B21",
+        title: "芋头扣肉",
+        details: [
+          {
+            quantity: "~420g",
+            price: 48,
+          },
+        ],
+      },
     ],
   },
 ];

@@ -145,6 +145,16 @@ export const specialDishData: DishType[] = [
           },
         ],
       },
+      {
+        code: "A15",
+        title: "斋面筋",
+        details: [
+          {
+            quantity: "~600g",
+            price: 38,
+          },
+        ],
+      },
     ],
   },
 ];
