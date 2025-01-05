@@ -26,7 +26,7 @@ const Page = () => {
   const [imageList, setImageList] = useState<string[]>([]);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
-  const [isListing, setIsListing] = useState(true);
+  const [isListing, setIsListing] = useState(false);
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
