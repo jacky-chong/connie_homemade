@@ -4,17 +4,20 @@ import {
   fetchAvailablePhotos,
   findAvailablePhotos,
 } from "@/app/home/utils/photoUtils";
-import { Divider } from "antd";
+import { Card, Divider } from "antd";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import DishCategory from "./component.tsx/DishCategory";
+import DishCategory from "./component.tsx/DishCategoryDetails";
 import SegmentedControl from "./component.tsx/SegmentedControl";
-import { chickenData } from "./specialDish/chickenData";
-import { porkData } from "./specialDish/porkData";
-import { specialDishData } from "./specialDish/specialDishData";
+import { chickenData } from "./menu/chickenData";
+import { porkData } from "./menu/porkData";
+import { specialDishData } from "./menu/specialDishData";
 import { DishType } from "./type/DishType";
 import Image from "next/image";
 import { WhatsAppOutlined } from "@ant-design/icons";
+import DishCategoryListing from "./component.tsx/DishCategoryListing";
+import DishCategoryDetails from "./component.tsx/DishCategoryDetails";
+import { Header } from "./component.tsx/Header";
 
 const Page = () => {
   const router = useRouter();
@@ -23,6 +26,7 @@ const Page = () => {
   const [imageList, setImageList] = useState<string[]>([]);
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const [isListing, setIsListing] = useState(true);
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
   useEffect(() => {
@@ -68,6 +72,8 @@ const Page = () => {
     setImageList([]);
   };
 
+  console.log(isListing);
+
   return (
     <>
       <ModalCarouselImage
@@ -75,44 +81,33 @@ const Page = () => {
         openModal={openModal}
         handleClose={handleClose}
       />
-      <header className="fixed top-0 left-0 right-0 bg-white z-10 ">
-        <div className="p-4 flex  items-center">
-          <Image
-            src="/favicon.ico"
-            height={92}
-            width={92}
-            alt="Connie Homemade logo"
-            className="flex-shrink-0"
-          />
-          <div className="ml-4">
-            <h1 className="text-2xl font-bold">Connie Homemade</h1>
-            <h3 className="text-gray-500">真材实料，高品质且用心煮❤️</h3>
-
-            <h3 className="text-gray-500 text-xs flex items-center mt-1">
-              {/* Optional Icon */}
-              <a
-                href="https://wa.me/60123781262" // Replace with your full international number
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-green-600"
-                aria-label="WhatsApp to order"
-              >
-                <WhatsAppOutlined /> 有兴趣者可以点击我下单哦！
-              </a>
-            </h3>
-          </div>
-        </div>
-        <div className="px-4 ">
-          <SegmentedControl onChange={handleSegmentChange} />
-        </div>
-        <Divider className="!m-0"></Divider>
-      </header>
+      <Header
+        isListing={isListing}
+        onChange={handleSegmentChange}
+        setIsListing={setIsListing}
+      />
 
       <main className="pt-40 p-4">
-        {Array.isArray(data) &&
+        {isListing &&
+          Array.isArray(data) &&
           data.length > 0 &&
           data.map((dishCategory, index) => (
-            <DishCategory
+            <DishCategoryDetails
+              key={index}
+              dishCategory={dishCategory}
+              allPhotos={allPhotos}
+              showPhotos={showPhotos}
+              ref={(el) => {
+                categoryRefs.current[dishCategory.type] = el;
+              }}
+            />
+          ))}
+
+        {!isListing &&
+          Array.isArray(data) &&
+          data.length > 0 &&
+          data.map((dishCategory, index) => (
+            <DishCategoryListing
               key={index}
               dishCategory={dishCategory}
               allPhotos={allPhotos}

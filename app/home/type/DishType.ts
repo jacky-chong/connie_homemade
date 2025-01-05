@@ -13,3 +13,9 @@ export type DishTypeData = {
     price?: number;
   }[];
 };
+
+export type DishItemProps = {
+  dish: DishTypeData;
+  allPhotos: string[];
+  showPhotos: (code: string) => void;
+};

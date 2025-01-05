@@ -1,18 +1,12 @@
 // components/DishItem.tsx
 
 import { Avatar, List } from "antd";
-import { setDescription } from "../home/helper/setDescription";
-import { setTitle } from "../home/helper/setTitle";
-import { DishTypeData } from "../home/type/DishType";
-import { findAvailablePhotos } from "../home/utils/photoUtils";
+import { setDescription } from "../helper/setDescription";
+import { setTitle } from "../helper/setTitle";
+import { DishItemProps } from "../type/DishType";
+import { findAvailablePhotos } from "../utils/photoUtils";
 
-type DishItemProps = {
-  dish: DishTypeData;
-  allPhotos: string[];
-  showPhotos: (code: string) => void;
-};
-
-const DishItem = ({ dish, allPhotos, showPhotos }: DishItemProps) => {
+const DishListing = ({ dish, allPhotos, showPhotos }: DishItemProps) => {
   const availablePhotos = findAvailablePhotos(dish.code, allPhotos);
   const primaryPhoto =
     availablePhotos.length > 0
@@ -41,4 +35,4 @@ const DishItem = ({ dish, allPhotos, showPhotos }: DishItemProps) => {
   );
 };
 
-export default DishItem;
+export default DishListing;

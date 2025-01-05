@@ -8,9 +8,9 @@ import { Avatar, Button, Divider, List, Select } from "antd";
 import { useEffect, useState } from "react";
 import { setDescription } from "../../home/helper/setDescription";
 import { setTitle } from "../../home/helper/setTitle";
-import { specialDishData } from "../../home/specialDish/specialDishData";
-import { porkData } from "../../home/specialDish/porkData";
-import { chickenData } from "../../home/specialDish/chickenData";
+import { specialDishData } from "../../home/menu/specialDishData";
+import { porkData } from "../../home/menu/porkData";
+import { chickenData } from "../../home/menu/chickenData";
 import { DoubleLeftOutlined, RollbackOutlined } from "@ant-design/icons";
 import { useRouter } from "next/navigation";
 
