@@ -30,7 +30,7 @@ export const specialDishData: DishType[] = [
         title: "鱼香茄子",
         details: [
           {
-            quantity: "~350g",
+            quantity: "~400g",
             price: 30,
           },
         ],
