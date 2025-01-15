@@ -223,6 +223,17 @@ export const porkData: DishType[] = [
           },
         ],
       },
+      {
+        code: "B22",
+        title: "芽菇、蒜焖花肉片",
+        details: [
+          {
+            quantity: "~500g",
+            price: 48,
+          },
+        ],
+      },
+
     ],
   },
 ];
