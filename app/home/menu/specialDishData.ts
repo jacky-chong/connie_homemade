@@ -185,6 +185,56 @@ export const specialDishData: DishType[] = [
                     },
                 ],
             },
+             {
+                code: "A19",
+                title: "咸肉粽",
+                details: [
+                    {
+                        quantity: "~1 粒",
+                        price: 12,
+                    },
+                ],
+            },
+            {
+                code: "A20",
+                title: "罗汉斋",
+                details: [
+                    {
+                        quantity: "~800g",
+                        price: 28,
+                    },
+                ],
+            },
+            {
+                code: "A21",
+                title: "豆瓣酱焖豆腐卜",
+                details: [
+                    {
+                        quantity: "~500g",
+                        price: 18,
+                    },
+                ],
+            },
+            {
+                code: "A22",
+                title: "咸蛋炒米粉",
+                details: [
+                    {
+                        quantity: "1 盒",
+                        price: 12,
+                    },
+                ],
+            },
+            {
+                code: "A23",
+                title: "桂豆叉烧炒饭",
+                details: [
+                    {
+                        quantity: "1 盒",
+                        price: 12,
+                    },
+                ],
+            },
         ],
     },
 ];
